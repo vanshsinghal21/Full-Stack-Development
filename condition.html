@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 153; // Input number to check
+        var temp = num;
+        var s = 0; // Initialised sum variable
+        var power = String(num).length;
+
+// Extract digits and calculate sum of powers
+while (temp > 0) {
+    var digit = temp % 10;
+    s += Math.pow(digit, power);
+    temp = Math.floor(temp / 10);
+}
+
+// Conditional logic block
+if (s === num) {
+    console.log(num + " is an Armstrong number.");
+} else {
+    console.log(num + " is not an Armstrong number.");
+}
+    </script>
+</body>
+</html>
