@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUS BOOKING SYSTEM</title>
+</head>
+
+<body>
+
+    <div style="border: 2px solid red; width: 500px; background-color: aqua;">
+
+        <center>
+            <h1>Welcome Bus Booking System</h1>
+        </center>
+
+        <h3>User Informations</h3>
+
+        <p>
+            NAME:
+            <input type="text">
+        </p>
+
+        <br>
+
+        <p>
+            Address:
+
+            <select>
+                <option value="">Select your City</option>
+                <option value="GZB">GZB</option>
+                <option value="Delhi">Delhi</option>
+                <option value="BSR">BSR</option>
+                <option value="Meerut">Meerut</option>
+                <option value="Kanpur">Kanpur</option>
+            </select>
+
+            <input type="text">
+        </p>
+
+        <p>
+            User Age:
+            <input type="text">
+        </p>
+
+        <p>
+            User Aadhar No:
+            <input type="text">
+        </p>
+
+        <br>
+
+        <h3>Bus Booking Options</h3>
+
+        <p>
+            Select Bus Options:
+
+            AC Bus - ₹2000
+            <input type="radio" name="bus" value="2000">
+
+            Non AC Bus - ₹10000
+            <input type="radio" name="bus" value="10000">
+        </p>
+
+        <p>
+            Select Your Seat:
+
+            <select id="seats">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </p>
+
+        <br>
+
+        <button onclick="calculatePrice()">Save</button>
+
+    </div>
+
+
+    <script>
+
+        function calculatePrice() {
+
+            
+            let bus = document.querySelector('input[name="bus"]:checked');
+
+            
+            let seats = document.getElementById("seats").value;
+
+            
+            if (bus == null) {
+                alert("Please select a bus.");
+                return;
+            }
+
+            // Get price of selected bus
+            let price = bus.value;
+
+            // Calculate total price
+            let totalPrice = price * seats;
+
+            // Display result
+            alert("Total Price = ₹" + totalPrice);
+        }
+
+    </script>
+
+</body>
+</html>
